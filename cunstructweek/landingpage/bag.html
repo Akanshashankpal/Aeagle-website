@@ -21,11 +21,8 @@
       margin-top: 10px;
       background-color: red;
       color: white;
-      padding: 10px;
+      padding: 5px;
       cursor: pointer;
-      border: none;
-      display: inline-block;
-      margin-left: 2rem;
     }
     body {
     margin: 0;
@@ -139,13 +136,12 @@
 
         /* Styling for second navigation bar */
         #mennav {
-            background-color: #fff;
+            background-color: #f8f8f8;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
             padding: 15px 20px;
             border-top: 1px solid #ccc;
-            text-transform: uppercase;
         }
 
         #logo {
@@ -446,14 +442,16 @@
     <!-- Second Navigation Bar -->
     <div id="mennav">
         <div id="logo">
-            <a href="index.html"><img src="https://imagescdn.aeo.in/img/app/brands/superapp/Icons/header_brand_logo_AEO.png?auto=format"></a>
+            <img src="https://imagescdn.aeo.in/img/app/brands/superapp/Icons/header_brand_logo_AEO.png?auto=format">
+            <a id="MK" href="landing2.html">AMERICAN</a>
         </div>
-        <a href="men.html">Men</a>
-        <a href="women.html">Women</a>
-        <a href="jeans.html">Jeans</a>
-        <a href="women.html">Fever of Janhvi</a>
-        <a href="aeri.html">AE Activewear</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Jeans</a>
+        <a href="#">Fever of Janhvi</a>
+        <a href="#">AE Activewear</a>
         <a href="#">Sales</a>
+        <a href="#">Search Shirts</a>
 
         <div class="icon-container-express">
             <i class="fa-solid fa-truck-fast"></i> 
@@ -466,10 +464,10 @@
         </div>
 
         <div class="aditya-birla-logo">
-            <img style="width: 80px;height: 70px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz5cCiWmAh8OhtfuYC1G5vAiHxQFlyK_ZrBQ&s" >
+            <img style="width: 150px;height: 70px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz5cCiWmAh8OhtfuYC1G5vAiHxQFlyK_ZrBQ&s" >
         </div>
     </div>
-  <h1 style="text-align: center;">AMERICAN EAGLE BAG PRODUCT</h1>
+  <h1 style="text-align: center;">AMERICAN EGLE BAG PRODUCT</h1>
   <div id="bag-container"></div> <!-- Container to show bag items -->
 <!-- New Section Above Footer with Three Divs -->
 <div id="footer-top-info">
@@ -604,25 +602,6 @@
         let discount = document.createElement('p');
         discount.innerText = "Discount: " + item.discount;
         card.appendChild(discount);
-
-        let buyBtn = document.createElement('button');
-        buyBtn.textContent = 'Buy Product';
-        buyBtn.style.backgroundColor="green"
-        buyBtn.addEventListener('click', () => {
-          
-         alert("buy product")
-        window.location.reload();
-        //  window.location.href="delivery.html"
-         if (isUserLoggedIn()) {
-        // Redirect to checkout page if logged in
-        window.location.href="delivery.html"
-    } else {
-        // Redirect to sign-up page if not logged in
-        window.location.href = "login.html";
-    }
-
-        });
-        card.appendChild(buyBtn);
 
         // Add "Remove" button to delete the item from the bag
         let removeBtn = document.createElement('button');

@@ -122,13 +122,12 @@ body {
 
         /* Styling for second navigation bar */
         #mennav {
-            background-color: #fff;
+            background-color: #f8f8f8;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
             padding: 15px 20px;
             border-top: 1px solid #ccc;
-            text-transform: uppercase;
         }
 
         #logo {
@@ -953,6 +952,47 @@ body {
       color: #555;
       margin-bottom: 8px;
     }
+     /* Grid Layout for displaying the cards */
+     #bytop {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusts based on screen size */
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Styling for each product card */
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-card h2 {
+      font-size: 1.25rem;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .product-card p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 8px;
+    }
 
 
     </style>
@@ -997,17 +1037,17 @@ body {
     <!-- Second Navigation Bar -->
     <div id="mennav">
         <div id="logo">
-           
-           <a href="index.html"> <img src="https://imagescdn.aeo.in/img/app/brands/superapp/Icons/header_brand_logo_AEO.png?auto=format"></a>
-         
+            <img src="https://imagescdn.aeo.in/img/app/brands/superapp/Icons/header_brand_logo_AEO.png?auto=format">
+            <a id="MK" href="landing2.html"></a>
         </div>
-        <a href="index.html">home</a>
-        <a href="mens.html">Mens</a>
-        <a href="women.html">Women</a>
-        <a href="jeans.html">Jeans</a>
-        <a href="women.html">Fever of Janhvi</a>
-        <a href="aeri.html">AE Activewear</a>
+        <a href="landingpage.html">home</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Jeans</a>
+        <a href="#">Fever of Janhvi</a>
+        <a href="#">AE Activewear</a>
         <a href="#">Sales</a>
+        <a href="#">Search Shirts</a>
 
         <!-- Express Delivery with icon -->
         <div class="icon-container-express">
@@ -1026,256 +1066,34 @@ body {
             <img style="width: 50px;height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz5cCiWmAh8OhtfuYC1G5vAiHxQFlyK_ZrBQ&s">
         </div>
     </div>
+    <div id="bytop">
 
-    <!-- Slider with Shop Now Button -->
-   
-
-   
-
-        <br>
-
-      
-          
-          
-  <div class="container">
-    <!-- Div 1 -->
-    <div class="item">
-      <img style="height: 460px;" src="https://images.meesho.com/images/products/392295301/ct8wk_512.jpg" alt="Summer Shirt 1">
-      <h2>Summer_Shirts</h2>
-      <p><strong>Last year:</strong> Summer with Summer Shirts</p>
-      <p>Summer shirts are the perfect addition to any man’s wardrobe. With a plethora of styles and trends to choose from, these summer shirts for men are must-haves for the hot weather.</p>
-      <button>READ MORE</button>
     </div>
-
-    <!-- Div 2 -->
-    <div class="item">
-      <img style="height: 460px;" src="https://www.hancockfashion.com/cdn/shop/files/43518Dgrey_3.jpg?v=1734414970" alt="Summer Shirt 2">
-      <h2>Summer_Shirts</h2>
-      <p><strong>Last year:</strong> Summer with Summer Shirts</p>
-      <p>Summer shirts are the perfect addition to any man’s wardrobe. With a plethora of styles and trends to choose from, these summer shirts for men are must-haves for the hot weather.</p>
-      <button>READ MORE</button>
-    </div>
-
-    <!-- Div 3 -->
-    <div class="item">
-      <img style="height: 460px;" src="https://www.bewakoof.com/blog/wp-content/uploads/2024/06/men-s-charcoal-grey-geometric-printed-shirt-638989-1717071140-1-819x1024.webp" alt="Summer Shirt 3">
-      <h2>Summer_Shirts</h2>
-      <p><strong>Last year:</strong> Summer with Summer Shirts</p>
-      <p>Summer shirts are the perfect addition to any man’s wardrobe. With a plethora of styles and trends to choose from, these summer shirts for men are must-haves for the hot weather.</p>
-      <button>READ MORE</button>
-    </div>
-
-    <!-- Div 4 -->
-   
-  </div>
-  <div id="mcard"></div>
-  <!-- New Section Above Footer with Three Divs -->
-  <div id="footer-top-info">
-    <div class="footer-info-item">
-        <i class="fa-solid fa-truck-fast"></i>
-        <p>FREE SHIPPING</p>
-    </div>
-    <div class="footer-info-item">
-        <i class="fa-solid fa-rotate"></i>
-        <p>RETURN WITHIN 15 DAYS</p>
-    </div>
-    <div class="footer-info-item">
-        <i class="fa-solid fa-scissors"></i>
-        <p>FREE ALTERATION</p>
-    </div>
-</div>
-<div id=" dipakcards">
-
-</div>
-<br>
-
-<!-- New Section above Footer -->
-
-
-<!-- Existing Footer Section -->
-<div id="footer">
-<div class="footer-top">
-    <div class="footer-left">
-        <h3>Join the American Eagle Community</h3>
-        <p>Sign up to receive exclusive offers, the latest collections, and more!</p>
-        <div class="newsletter">
-            <input type="email" placeholder="Enter your email" id="email" name="email">
-            <button type="button" class="subscribe-btn">Subscribe</button>
-        </div>
-    </div>
-    <div class="footer-right">
-        <div class="social-links">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-    </div>
-</div>
-
-<div class="footer-middle">
-    <div class="footer-links">
-        <div class="footer-link-column">
-            <h4>Company</h4>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Press</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-            </ul>
-        </div>
-        <div class="footer-link-column">
-            <h4>Customer Service</h4>
-            <ul>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Returns & Exchanges</a></li>
-                <li><a href="#">Order Tracking</a></li>
-                <li><a href="#">Shipping Info</a></li>
-                <li><a href="#">Size Guide</a></li>
-            </ul>
-        </div>
-        <div class="footer-link-column">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="#">Store Locator</a></li>
-                <li><a href="#">Gift Cards</a></li>
-                <li><a href="#">AE Rewards</a></li>
-                <li><a href="#">Affiliate Program</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="footer-bottom">
-    <p>&copy; 2025 American Eagle. All Rights Reserved.</p>
-</div>
-</div>
-  
-  
-
-          
-        
-
-        
-</body>
-<script>
-   // Get the container element to display the cards
-let dipakcards = document.getElementById("dipakcaeds");
+    <script>
+          let bytop = document.getElementById("bytop");
 
 // Fetch data from the API
-fetch("https://67926b13cf994cc68049f1b0.mockapi.io/american")
-  .then(response => response.json())  // Parse the response as JSON
+fetch("https://678a871bdd587da7ac2a892a.mockapi.io/produt")
+  .then(response => response.json())  // Convert the response to JSON
   .then(data => {
-    // Loop through the fetched data and create a card for each item
+    // Create HTML content for each product card
+    let htmlContent = "";
     data.forEach(item => {
-      // Create a div for the card
-      let card = document.createElement("div");
-      card.classList.add("card");  // Add the class "card" for styling
-
-      // Add an image to the card (if available)
-      if (item.image) {
-        let img = document.createElement("img");
-        img.src = item.image;
-        img.alt = item.name; // Use the item's name as the alt text for the image
-        card.appendChild(img); // Append the image to the card
-      }
-    
-      // Add the title (item name)
-      let title = document.createElement("h3");
-      title.textContent = item.name;
-      card.appendChild(title); // Append the title to the card
-
-      // Add the description (if available)
-      let description = document.createElement("p");
-      description.textContent = item.description || "No description available";
-      card.appendChild(description); 
-      
-      let price=document.createElement("h4")
-      price.innerText=item.price
-      card.appendChild(price)
-
-      let offerprice=document.createElement("h4")
-      offerprice.innerText=item.offerprice
-      card.appendChild(offerprice)
-
-      let discount=document.createElement("p")
-      discount.innerText=item.discount
-      card.appendChild(discount)
-
-
-
-      // Add an event listener to the card to navigate to the details page
-      card.addEventListener("click", () => {
-        window.location.href = `details.html?id=${item.id}`;  // Pass the item ID to the details page
-      });
-
-      // Append the card to the container
-      mcard.appendChild(card);
+      htmlContent += `
+        <div class="product-card">
+          <img src="${item.image}" alt="${item.name}" />
+          <h2>${item.name}</h2>
+          <p>Price: $${item.price}</p>
+          <p>Description: ${item.description}</p>
+        </div>
+      `;
     });
+
+    // Insert the generated HTML content into the 'bytop' container
+    bytop.innerHTML = htmlContent;
   })
-  .catch(error => console.log("Error fetching data:", error));  // Handle any errors
-
-
-  // Get the element with id "productContainer"
-  let productContainer = document.getElementById("productContainer");
-  // Fetch data from the API
-fetch("")
-  .then(response => response.json())  // Parse the response as JSON
-  .then(data => {
-    // Loop through the fetched data and create a card for each item
-    data.forEach(item => {
-      // Create a div for the card
-      let card = document.createElement("div");
-      card.classList.add("card");  // Add the class "card" for styling
-
-      // Add an image to the card (if available)
-      if (item.image) {
-        let img = document.createElement("img");
-        img.src = item.image;
-        img.alt = item.name; // Use the item's name as the alt text for the image
-        card.appendChild(img); // Append the image to the card
-      }
-    
-      // Add the title (item name)
-      let title = document.createElement("h3");
-      title.textContent = item.name;
-      card.appendChild(title); // Append the title to the card
-
-      // Add the description (if available)
-      let description = document.createElement("p");
-      description.textContent = item.description || "No description available";
-      card.appendChild(description); 
-      
-      let price=document.createElement("h4")
-      price.innerText=item.price
-      card.appendChild(price)
-
-      let offerprice=document.createElement("h4")
-      offerprice.innerText=item.offerprice
-      card.appendChild(offerprice)
-
-      let discount=document.createElement("p")
-      discount.innerText=item.discount
-      card.appendChild(discount)
+  .catch(error => console.error('Error fetching data:', error));  // Handle er
+    </script>
 
 
 
-      // Add an event listener to the card to navigate to the details page
-      card.addEventListener("click", () => {
-        window.location.href = `op.html?id=${item.id}`;  // Pass the item ID to the details page
-      });
-
-      // Append the card to the container
-      mcard.appendChild(card);
-    });
-  })
-  .catch(error => console.log("Error fetching data:", error));  // Handle any errors
-
-
-    // Fetch data from the API
-    
-
-</script>
-</html>

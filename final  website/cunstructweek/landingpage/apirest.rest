@@ -1,0 +1,4 @@
+GET https://67926b13cf994cc68049f1b0.mockapi.io/american
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+

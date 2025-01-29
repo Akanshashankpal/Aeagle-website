@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Bag</title>
+    <style>
+        .card {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 400px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        button {
+            margin-top: 10px;
+            background-color: red;
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar container */
+        #nav1 {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        #nav1:hover {
+            background-color: #333;
+        }
+
+        /* More Brands Section */
+        #morebrands h5 {
+            font-size: 18px;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+        #morebrands:hover h5 {
+            color: #ff9800;
+        }
+
+        /* Location, Contact, Login, and Other Icons Section */
+        #loc {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Each icon and text pair */
+        .icon-container {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+        }
+
+        .icon-container:hover {
+            transform: scale(1.1);
+            /* Slight zoom effect */
+            opacity: 1;
+            /* Ensure full opacity */
+        }
+
+        /* Icon styling */
+        .icon-container i {
+            font-size: 24px;
+            margin-right: 8px;
+            transition: color 0.3s ease;
+        }
+
+        /* Text styling */
+        .loc-text {
+            font-size: 14px;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effect on text and icon */
+        .icon-container:hover i,
+        .icon-container:hover .loc-text {
+            color: #ff9800;
+            /* Change color on hover */
+        }
+
+        /* Underline effect on text hover */
+        .icon-container:hover .loc-text {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            #nav1 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #loc {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 10px;
+            }
+
+            .icon-container {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .icon-container i {
+                font-size: 20px;
+            }
+
+            .loc-text {
+                font-size: 16px;
+            }
+        }
+
+        /* Styling for second navigation bar */
+        #mennav {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 15px 20px;
+            border-top: 1px solid #ccc;
+            text-transform: uppercase;
+        }
+
+        #logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #logo img {
+            width: 200px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        #mennav a {
+            margin: 0 15px;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        #mennav a:hover {
+            color: #ff9800;
+            transform: scale(1.1);
+            /* Slight zoom on hover for text links */
+        }
+
+        /* New icon container styles for express delivery and search */
+        .icon-container-search {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .icon-container-search img {
+            width: 30px;
+            height: auto;
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-container-search:hover img {
+            transform: scale(1.1);
+            /* Slight zoom effect on image */
+        }
+
+        .icon-container-express {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .icon-container-express i {
+            font-size: 20px;
+            margin-right: 8px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .icon-container-express:hover i {
+            color: #ff9800;
+            /* Change icon color on hover */
+            transform: scale(1.1);
+            /* Slight zoom effect on the icon */
+        }
+
+        .icon-container-express:hover a {
+            color: #ff9800;
+            /* Change text color on hover */
+        }
+
+        /* Styling for Aditya Birla logo */
+        .aditya-birla-logo img {
+            width: 50px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        /* New Section Styling for Footer Info */
+        #footer-top-info {
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .footer-info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-info-item i {
+            font-size: 20px;
+            color: #ff9800;
+        }
+
+        .footer-info-item p {
+            margin: 0;
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        /* Icon hover effects */
+        .footer-info-item:hover i {
+            color: #fff;
+        }
+
+        .footer-info-item:hover p {
+            color: #fff;
+        }
+
+        /* Footer Section Styling */
+        #footer {
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            border-bottom: 2px solid #444;
+        }
+
+        .footer-left h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .footer-left p {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .newsletter {
+            display: flex;
+            align-items: center;
+        }
+
+        .newsletter input {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+        .subscribe-btn {
+            padding: 12px 25px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #e87c00;
+        }
+
+        .footer-right .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-right .social-links a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-right .social-links a:hover {
+            color: #ff9800;
+        }
+
+        .footer-middle {
+            background-color: #333;
+            padding: 40px 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-link-column {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        .footer-link-column h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ff9800;
+        }
+
+        .footer-link-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-link-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-link-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link-column ul li a:hover {
+            color: #ff9800;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #111;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-left {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .footer-right {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-link-column {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- First Navigation Bar -->
+    <div id="nav1">
+        <div id="morebrands">
+            <h5>MORE BRANDS</h5>
+        </div>
+
+        <div id="loc">
+            <div class="icon-container">
+                <i class="fa-solid fa-location-dot"></i>
+                <h5 class="loc-text">STORE</h5>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa-solid fa-phone"></i>
+                <h5 class="loc-text">CONTACT</h5>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa-regular fa-user"></i>
+                <h5 class="loc-text">LOGIN</h5>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Navigation Bar -->
+    <div id="mennav">
+        <div id="logo">
+            <a href="index.html"> <img
+                    src="https://imagescdn.aeo.in/img/app/brands/superapp/Icons/header_brand_logo_AEO.png?auto=format"></a>
+        </div>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Jeans</a>
+        <a href="#">Fever of Janhvi</a>
+        <a href="#">AE Activewear</a>
+        <a href="#">Sales</a>
+
+        <div class="icon-container-express">
+            <i class="fa-solid fa-truck-fast"></i>
+            <a href="#">Express Delivery</a>
+        </div>
+
+        <div class="icon-container-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="#">Search</a>
+        </div>
+
+        <div class="aditya-birla-logo">
+            <img style="width: 150px;height: 70px;"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz5cCiWmAh8OhtfuYC1G5vAiHxQFlyK_ZrBQ&s">
+        </div>
+    </div>
+    <h1 style="text-align: center;">AMERICAN EAGLE WISHLIST PRODUCT</h1>
+    <div id="wish-container"></div> <!-- Container to show bag items -->
+    <!-- New Section Above Footer with Three Divs -->
+    <div id="footer-top-info">
+        <div class="footer-info-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <p>FREE SHIPPING</p>
+        </div>
+        <div class="footer-info-item">
+            <i class="fa-solid fa-rotate"></i>
+            <p>RETURN WITHIN 15 DAYS</p>
+        </div>
+        <div class="footer-info-item">
+            <i class="fa-solid fa-scissors"></i>
+            <p>FREE ALTERATION</p>
+        </div>
+    </div>
+    <div id=" dipakcards">
+
+    </div>
+    <br>
+
+    <!-- New Section above Footer -->
+
+
+    <!-- Existing Footer Section -->
+    <div id="footer">
+        <div class="footer-top">
+            <div class="footer-left">
+                <h3>Join the American Eagle Community</h3>
+                <p>Sign up to receive exclusive offers, the latest collections, and more!</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Enter your email" id="email" name="email">
+                    <button type="button" class="subscribe-btn">Subscribe</button>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-middle">
+            <div class="footer-links">
+                <div class="footer-link-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Store Locator</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                        <li><a href="#">AE Rewards</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 American Eagle. All Rights Reserved.</p>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            const wishContainer = document.getElementById('wish-container');
+
+            // Retrieve the items from localStorage (the "bag")
+            let wish = JSON.parse(localStorage.getItem('wish')) || [];
+
+            // Check if the bag is empty
+            if (wish.length === 0) {
+                wishContainer.innerHTML = "<p>Your wishlist is empty.</p>";
+                return;
+            }
+
+            // Loop through each item and create a card for it
+            wish.forEach(item => {
+                let card = document.createElement('div');
+                card.classList.add('card');
+
+                // Add image if available
+                if (item.image) {
+                    let img = document.createElement('img');
+                    img.src = item.image;
+                    img.alt = item.name;
+                    card.appendChild(img);
+                }
+
+                // Add item name (title)
+                let title = document.createElement('h3');
+                title.textContent = item.name;
+                card.appendChild(title);
+
+                // Add description (if available)
+                let description = document.createElement('p');
+                description.textContent = item.description || "No description available";
+                card.appendChild(description);
+
+                // Add price
+                let price = document.createElement('h4');
+                price.innerText = "Price: " + item.price;
+                card.appendChild(price);
+
+                // Add offer price
+                let offerprice = document.createElement('h4');
+                offerprice.innerText = "Offer Price: " + item.offerprice;
+                card.appendChild(offerprice);
+
+                // Add discount
+                let discount = document.createElement('p');
+                discount.innerText = "Discount: " + item.discount;
+                card.appendChild(discount);
+
+                // Add "Remove" button to delete the item from the bag
+                let removeBtn = document.createElement('button');
+                removeBtn.textContent = 'Remove';
+                removeBtn.addEventListener('click', () => {
+                    // Remove the item from the bag
+                    removeItemFromBag(item.id);
+
+                    // Reload the page to update the displayed bag contents
+                    window.location.reload();
+                });
+                card.appendChild(removeBtn);
+
+                // Append the card to the bag container
+                wishContainer.appendChild(card);
+            });
+        };
+
+        // Function to remove an item from the bag based on the item ID
+        function removeItemFromBag(itemId) {
+            let wish = JSON.parse(localStorage.getItem('wish')) || [];
+
+            // Filter out the item with the specified ID
+            wish = wish.filter(item => item.id !== itemId);
+
+            // Save the updated bag back to localStorage
+            localStorage.setItem('wish', JSON.stringify(wish));
+        }
+    </script>
+</body>
+
+</html>

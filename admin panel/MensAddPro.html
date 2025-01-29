@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+  <title>Add product</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url(https://img.freepik.com/free-psd/3d-rendering-sales-marketing-podium-background_23-2151115622.jpg?t=st=1737712414~exp=1737716014~hmac=f59b3ec2f585eeb84fa8bb59875bb48bcb6aceb9a00097258852dec2efb9d4aa&w=740);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+/* General reset */
+  h4 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+      margin-top:2rem;
+      font-size: 25px;
+    }
+    
+    .form-div {
+      width: 500px;
+      margin: 0 auto;
+      /* background: white; */
+      ;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-div span{
+      margin-left: 2rem;
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+
+    .form-div input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-div input:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    hr {
+      margin: 30px 0;
+      border: 0;
+      height: 1px;
+      background: #ccc;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <!-- // update id -->
+  <div class="form">
+
+  <h4><a href="Mens.html"><i class='bx bx-left-arrow-alt' style="color: #fff; font-size:2rem;"></i></a>  Add Product</h4>
+  
+    
+    <div class="form-div">
+     <span>Name:</span><input type="text" id="nameupdate" class="u-full-width" placeholder="Add Name" />
+    </div>
+    <br>
+    <div class="form-div">
+      <span>Description:</span> <input type="text" id="description" class="u-full-width" placeholder="Add Description" />
+    </div>
+    <br>
+    <div class="form-div">
+      <span>Price:</span><input type="text" id="price" class="u-full-width" placeholder="Add Price" />
+    </div>
+    <br>
+    <div class="form-div">
+      <span>Offer Price:</span> <input type="text" id="offerPrice" class="u-full-width" placeholder="Add OfferPrice " />
+    </div>
+    <br>
+    <div class="form-div">
+      <span>Discount:</span> <input type="text" id="discount" class="u-full-width" placeholder="Add Discount " />
+    </div>
+    <br>
+    <div class="form-div">
+      <span>Image:</span> <input type="img" id="image" class="u-full-width" placeholder="Image Link" />
+    </div>
+    <br>
+    <button id="AddUser" class="u-full-width button button-primary">
+      Add Product
+    </button>
+
+  </div>
+  <hr>
+
+
+</body>
+<script>
+  let AddUser = document.getElementById("AddUser")
+  let token= JSON.parse(localStorage.getItem("token"))
+  AddUser.addEventListener("click", () => {
+  if(token && token.length>0){
+
+    let obj = {
+      name: nameupdate.value,
+      description: description.value,
+      price: price.value,
+      offerprice: offerPrice.value,
+      image: image.value,
+      discount: discount.value
+    };
+    console.log(obj);
+
+    fetch("https://67926b13cf994cc68049f1b0.mockapi.io/american", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      // Send your data in the request body as JSON
+      body: JSON.stringify(obj),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((task) => {
+        getUsers();
+        // renderUser(result)
+        console.log(task);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  
+  }else{
+    window.location.href="index.html"
+  }
+});
+    
+</script>
+
+</html>

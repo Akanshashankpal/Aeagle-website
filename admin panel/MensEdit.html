@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit men product</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        h4 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            color: white;
+            background: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .notifications-wrapper {
+            margin-top: 20px;
+        }
+        .left {
+            width: 50%;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .left img {
+            max-width: 100%;
+            height: 600px;
+            
+        }
+        .right {
+            width: 50%;
+            padding: 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            input, button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            h4 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            h4 {
+                font-size: 16px;
+            }
+
+            input, button {
+                font-size: 12px;
+                padding: 6px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    
+          <!-- // update id -->
+          <div class="container">
+            <div class="left">
+                <img src="https://static.vecteezy.com/system/resources/previews/001/222/484/non_2x/e-commerce-online-shopping-concept-vector.jpg" alt="">
+            </div>
+            <div class="right">
+            <h4>Edit Product</h4>
+            <div class="form-group">
+                <label for="idupdate">Id:</label>
+                <input type="text" id="idupdate" placeholder="Id update" />
+            </div>
+            <div class="form-group">
+                <label for="nameupdate">Name:</label>
+                <input type="text" id="nameupdate" placeholder="Name update" />
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" id="description" placeholder="Description update" />
+            </div>
+            <div class="form-group">
+                <label for="material">Image:</label>
+                <input type="text" id="material" placeholder="Material update" />
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" id="price" placeholder="Price update" />
+            </div>
+            <div class="form-group">
+                <label for="offerPrice">Offer Price:</label>
+                <input type="text" id="offerPrice" placeholder="Offer Price update" />
+            </div>
+            <button id="updateUser">Update Product</button>
+            <div class="notifications-wrapper" id="userDiv"></div>
+            </div>
+        </div>
+</body>
+<script>
+
+let bagArr = JSON.parse(localStorage.getItem("selectData"))
+    if (bagArr === null) {
+        bagArr = [];
+        // localStorage.setItem("favourite", JSON.stringify(favourite))
+
+    }
+    
+    console.log(bagArr)
+    let userDiv=document.getElementById("userDiv")
+     let id = document.getElementById("idupdate");
+      let nameupdate = document.getElementById("nameupdate");
+      let  description = document.getElementById("description");
+      let image = document.getElementById("material");
+      let price = document.getElementById("price");
+      let offerprice = document.getElementById("offerPrice");
+      let updateUser = document.getElementById("updateUser");
+
+
+      bagArr.forEach((e,i)=>{
+        id.value=e.id;
+       nameupdate.value=e.name;
+       description.value=e.description;
+       image.value=e.image;
+       price.value=e.price;
+       offerprice.value=e.offerprice
+      })
+     
+
+     updateUser.addEventListener("click", function () {
+        let obj1 = {
+          name: nameupdate.value, 
+          description:description.value,
+           price: price.value,
+          offerprice:offerprice.value,
+          image:image.value
+        };
+        console.log(obj1);
+        fetch(`https://67926b13cf994cc68049f1b0.mockapi.io/american/${id.value}`, {
+          method: "PUT", // or PATCH
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(obj1),
+        })
+          .then((res) => {
+            if (res.ok) {
+              return res.json();
+            } else {
+              throw new Error("Failed to update user");
+            }
+          })
+          .then((task1) => {
+            getUsers();
+            // renderUser(result)
+            console.log(task1);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+
+      function getUsers() {
+        fetch("https://67926b13cf994cc68049f1b0.mockapi.io/american", {
+          method: "GET",
+          headers: { "content-type": "application/json" },
+        })
+          .then((res) => {
+            if (res.ok) {
+              return res.json();
+            }
+          })
+          .then((result) => {
+            // renderUser(result);
+            console.log(result);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+
+</script>
+</html>

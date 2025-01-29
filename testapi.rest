@@ -1,0 +1,155 @@
+GET https://67926b13cf994cc68049f1b0.mockapi.io/american
+
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://img.freepik.com/free-photo/pants-hanger-with-green-background_23-2150264163.jpg?t=st=1737654011~exp=1737657611~hmac=3e2a9186dfc711d4a1abfe7c3900ce931c6c4179e9c75d48ca8c393871fc723c&w=360",
+   "name": "BootCut Jeans",
+    "description": "American Eagle Men Blue AirFlex+ Slim Bootcut Jean",
+    "price": "₹4999",
+    "offerprice":"₹2999",
+    "discount":"20% Off"
+}
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://img.freepik.com/free-photo/man-wearing-black-shirt-full-shot_23-2149345101.jpg?t=st=1737654113~exp=1737657713~hmac=24032ec9d7c6f68a7bd0ee91b6cb0624461af58ec98744e099d7465e8fc80898&w=360",
+   "name": "BootCut Jeans",
+    "description": "American Eagle Men Blue AirFlex+ Slim Bootcut Jean",
+    "price": "₹4999",
+    "offerprice":"₹2999",
+    "discount":"20% Off"
+}
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://img.freepik.com/free-photo/young-handsome-man-wooden-wall_176420-11290.jpg?t=st=1737654500~exp=1737658100~hmac=0116cb2907bbf8463209f0ed7f2d6d20cb0ac837604b97ef44d35b30b6819c17&w=360",
+   "name": "Sweater",
+    "description": "American Eagle Men Blue Shaker Crew Neck Sweater",
+    "price": "₹4999",
+    "offerprice":"₹3999",
+    "discount":"20% Off"
+}
+
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://img.freepik.com/premium-psd/beige-men-sweater_1296534-27098.jpg?w=740",
+   "name": "Sweater",
+    "description": "American Eagle Men Beige Shaker Crew Neck Sweater",
+    "price": "₹4999",
+    "offerprice":"₹3999",
+    "discount":"20% Off"
+}
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://img.freepik.com/free-photo/portrait-handsome-confident-stylish-hipster-lambersexual-modelman-dressed-green-sweater-jeans-fashion-male-posing-studio-near-white-wall_158538-24094.jpg?t=st=1737655212~exp=1737658812~hmac=3c09a26d8890e0c3e0aa7e33b21eeb22edd4140c10586ee288ae9efe9a740adb&w=740",
+   "name": "Sweater",
+    "description": "American Eagle Men Green Shaker Crew Neck Sweater",
+    "price": "₹4999",
+    "offerprice":"₹3999",
+    "discount":"20% Off"
+}
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://img.freepik.com/premium-vector/pair-black-jeans-with-white-stripe-front_861864-54.jpg?w=740",
+   "name": "BootCut Jeans",
+    "description": "American Eagle Men Black AirFlex+ Original Bootcut Jean",
+    "price": "₹4999",
+    "offerprice":"₹2999",
+    "discount":"20% Off"
+}
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://cdn.pixabay.com/photo/2021/02/02/14/07/sweatpants-5974189_640.jpg",
+   "name": "Joggers & Sweatpant",
+    "description": "American Eagle Men Grey 24/7 Jogger",
+    "price": "₹4599",
+    "offerprice":"₹3219",
+    "discount":"30% Off"
+}
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://cdn.pixabay.com/photo/2021/02/02/14/07/sweatpants-5974189_640.jpg",
+   "name": "Joggers & Sweatpant",
+    "description": "American Eagle Men Burgundy Embroidered Logo Graphic T-Shirt",
+    "price": "₹1599",
+    "offerprice":"₹879",
+    "discount":"45% Off"
+}
+###
+DELETE https://67926b13cf994cc68049f1b0.mockapi.io/american/8
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://cdn.pixabay.com/photo/2017/05/23/10/53/t-shirt-design-2336850_640.jpg",
+   "name": "Graphic Tees",
+    "description": "American Eagle Men Burgundy Embroidered Logo Graphic T-Shirt",
+    "price": "₹1599",
+    "offerprice":"₹879",
+    "discount":"45% Off"
+}
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZYoqi1emDwUtJxm-zVXUTwi66BSb67gBnnQ&s",
+   "name": "Pants",
+    "description": "American Eagle Men Green Flex Slim Khaki Pant",
+    "price": "₹3599",
+    "offerprice":"₹2879",
+    "discount":"20% Off"
+}
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://imagescdn.aeo.in/img/app/product/3/39823319-16680239.jpg?auto=format&w=390",
+   "name": "BootCut Jeans",
+    "description": "American Eagle Men Blue AirFlex+ Slim Bootcut Jean",
+    "price": "₹4999",
+    "offerprice":"₹2999",
+    "discount":"20% Off"
+}
+###
+POST https://67926b13cf994cc68049f1b0.mockapi.io/american
+Content-Type: application/json
+
+{
+    "image":"https://imagescdn.aeo.in/img/app/product/3/39665823-13890246.jpg",
+   "name": "BootCut Jeans",
+    "description": "American Eagle Men Blue AirFlex+ Slim Bootcut Jean",
+    "price": "₹4999",
+    "offerprice":"₹2999",
+    "discount":"20% Off"
+}
+
+
+###
+GET https://6798cf3fbe2191d708b0ea2b.mockapi.io/users
+###
+DELETE https://6798cf3fbe2191d708b0ea2b.mockapi.io/users/1
